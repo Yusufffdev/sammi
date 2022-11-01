@@ -318,4 +318,202 @@ OBJECT: Array; Object; Function; RegEx; Date: */
 //   console.log(a + b);
 // };
 
-const a = 5;
+/* ------------- 17 - Dars "Metod vs Xususiyatlar"💰 ------------ */
+// String
+
+// const user = "Yusuf";
+// const arr = [1, 2, 3, 4];
+
+// length
+// console.log(user.length);
+
+// // toUpperCase && toLowerCase
+// console.log(user.toLocaleUpperCase());
+// console.log(user.toLocaleLowerCase());
+
+// console.log(user);
+
+//const greeting = "Hello World !";
+
+// indexOf
+//console.log(greeting.indexOf("W"));
+
+//slice
+//console.log(greeting.slice(6, 11));
+
+// substring
+//console.log(greeting.substring(6, 11));
+
+// Number
+
+// const num = 8.4;
+
+// // round - yaxlitlash
+// console.log(Math.round(num));
+
+// const borderWidth = "13.8px";
+
+// // parseInt - sonni yaxlitlab number holatiga keltiradi
+// console.log(parseInt(borderWidth));
+
+// // parseFloat - sonni shundoligicha beradi
+// console.log(parseFloat(borderWidth));
+
+/* ------------- 18 - Dars "Amaliyot, uyga vazifa, Funksiya"💰 ------------ */
+
+// let numberOfSeries;
+
+// function startApp() {
+//   numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
+
+//   while (
+//     numberOfSeries == "" ||
+//     numberOfSeries == null ||
+//     isNaN(numberOfSeries)
+//   ) {
+//     numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
+//   }
+// }
+
+// startApp();
+
+// const seriesDB = {
+//   count: numberOfSeries,
+//   series: {},
+//   actors: {},
+//   genres: [],
+//   private: false,
+// };
+
+// function rememberMySeries() {
+//   for (let i = 0; i < 2; i++) {
+//     const a = prompt("Oxirgi ko'rgan serialingiz?"),
+//       b = prompt("Nechi baxo berasiz?");
+
+//     if (a != null && b != null && a != "" && b != "") {
+//       seriesDB.series[a] = b;
+//       console.log("done");
+//     } else {
+//       console.log("error");
+//       i--;
+//     }
+//   }
+// }
+
+// rememberMySeries();
+
+// function detectLevelSeries() {
+//   if (seriesDB.count < 5) {
+//     console.log("Kam serial ko’ripsiz");
+//   } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+//     console.log("Siz classik tamoshabin ekansiz");
+//   } else if (seriesDB.count >= 10) {
+//     console.log("Siz serialchi zvezda ekansiz");
+//   } else {
+//     console.log("Error");
+//   }
+// }
+
+// detectLevelSeries();
+
+// //1
+// function showDb(hidden) {
+//   if (!hidden) {
+//     console.log(seriesDB);
+//   }
+// }
+
+// showDb(seriesDB.private);
+
+// // 2
+
+// function writeGenres() {
+//   for (let i = 0; i < 3; i++) {
+//     const genre = prompt(`Yaxshi korgan janringiz ${i + 1}`, "");
+//     seriesDB.genres[i] = genre;
+//   }
+// }
+
+// writeGenres();
+
+/* ------------- 19 - Dars "Callback"💰 ------------ */
+
+// function first() {
+//   // code
+//   setTimeout(() => {
+//     console.log(1);
+//   }, 1000);
+// }
+
+// function second() {
+//   // code
+//   console.log(2);
+// }
+
+// first();
+// second();
+
+// function edu(subject, callback) {
+//   console.log(` I wanna teach ${subject}`);
+//   callback();
+// }
+
+// function done() {
+//   console.log("That's great");
+// }
+
+// edu("JavaScript", done);
+
+/* ------------- 20 - Dars "Object.Destruptizatsiya"💰 ------------ */
+
+// const theif = {
+//   jacket: "black",
+//   height: 1.7,
+//   colors: {
+//     hair: "gray",
+//     style: "curley",
+//   },
+//   howOut: function () {
+//     console.log("Fast with help doors");
+//   },
+// };
+
+// theif.howOut();
+
+// const { hair, style } = theif.colors;
+
+//delete theif.jacket;
+
+//console.log(theif);
+
+// console.log(Object.keys(theif).length);
+
+// let count = 0;
+
+// for (let key in theif) {
+//   count++;
+//   //   if (typeof theif[key] === "object") {
+//   //     for (let i in theif[key]) {
+//   //       console.log(`Property ${i} has value ${theif[key][i]}`);
+//   //     }
+//   //   } else {
+//   //     console.log(`Property ${key} has value ${theif[key]}`);
+//   //   }
+// }
+
+// console.log(count);
+
+const user = {
+  name: "Yusuf",
+  age: 15,
+  height: 1.75,
+  clors: {
+    hair: "black",
+    eye: "black",
+  },
+};
+
+const { height, hair } = user.clors;
+
+console.log(height);
+console.log(hair);
