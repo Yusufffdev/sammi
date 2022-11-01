@@ -503,17 +503,19 @@ OBJECT: Array; Object; Function; RegEx; Date: */
 
 // console.log(count);
 
-const user = {
-  name: "Yusuf",
-  age: 15,
-  height: 1.75,
-  clors: {
-    hair: "black",
-    eye: "black",
-  },
-};
+// const user = {
+//   name: "Yusuf",
+//   age: 15,
+//   height: 1.75,
+//   clors: {
+//     hair: "black",
+//     eye: "black",
+//   },
+// };
 
-const { height, hair } = user.clors;
+// const { height, hair } = user.clors;
 
-console.log(height);
-console.log(hair);
+// console.log(height);
+// console.log(hair);
+
+const a = 5;
