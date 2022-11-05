@@ -518,4 +518,319 @@ OBJECT: Array; Object; Function; RegEx; Date: */
 // console.log(height);
 // console.log(hair);
 
-const a = 5;
+/* ------------- 21 - Dars "Massivlar"💰 ------------ */
+
+// const arr = [2, 13, 14, 25, 8];
+
+// arr.sort(compareFn);
+// console.log(arr);
+
+// function compareFn(a, b) {
+//   return a - b;
+// }
+
+// arr[99] = 0;
+// console.log(arr.length);
+
+// arr.forEach(function (item, index, arr) {
+//   console.log(`${index}: ${item} into arr ${arr}`);
+// });
+
+// pop
+// arr.pop();
+
+// push
+// arr.push(7);
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//   console.log(value);
+// }
+
+// const movies = prompt("What is your favourite movies ?", "");
+// // oddiy textdan massivga oladi
+// const userMovies = movies.split(", ");
+// // afavit boyicha tartiblidi
+// userMovies.sort();
+// // massivdan oddit textga oladi
+// console.log(userMovies.join("-"));
+
+/* ------------- 22 - Dars "Clonlash, ES6"💰 ------------ */
+
+// let x = 10;
+// let y = x;
+
+// y = y + 5;
+
+// console.log(x);
+// console.log(y);
+
+// let isMarried = false;
+// let isArray = isMarried;
+// isArray = true;
+// console.log(isArray);
+
+// const number = {
+//   x: 10,
+//   y: 5,
+// };
+
+// const newNumber = number;
+
+// newNumber.x = 15;
+
+// console.log(number);
+// console.log(newNumber);
+
+// function nusxaObj(obj) {
+//   let objNusxa = {};
+
+//   for (let key in obj) {
+//     objNusxa[key] = obj[key];
+//   }
+//   return objNusxa;
+// }
+
+// const newNumbers = nusxaObj(numbers);
+
+// newNumbers.x = 15;
+// newNumbers.z.a = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+// const numbers = {
+//   x: 10,
+//   y: 5,
+// };
+
+// const addNumber = {
+//   z: 15,
+// };
+
+// const allNumbers = Object.assign(numbers, addNumber);
+
+// console.log(allNumbers);
+
+// arraylarni clone lash
+// const arr = [1, 2, 3];
+// const numbers = arr.slice();
+
+// numbers[1] = "yusuf";
+
+// console.log(arr);
+// console.log(numbers);
+
+// SPREAD
+
+// const liverpool = ["Salah", "Mane"];
+// const manCity = ["Mahrez"];
+
+// const mixPlayer = [...liverpool, ...manCity];
+
+// console.log(mixPlayer);
+
+/* ------------- 23 - Dars "Spread operatori"💰 ------------ */
+
+// const calc = [1, 2, 3];
+
+// function logger(x, y, z) {
+//   console.log(x + y + z);
+// }
+
+// logger(...calc);
+
+// const arr = ["x", "y"];
+
+// const newArr = [...arr];
+
+// Objectda SPREAD operatori
+
+// const numbers = {
+//   x: 10,
+//   y: 5,
+// };
+
+// const newNumbers = { ...numbers };
+
+// newNumbers.x = 15;
+
+// console.log(numbers);
+// console.log(newNumbers);
+
+/* ------------- 24 - Dars "OOP asoslari"💰 ------------ */
+
+// const car = {
+//   motor: "X",
+//   color: "red",
+//   isAirbag: true,
+//   isSpeed: function () {
+//     console.log(320);
+//   },
+// };
+
+// const gm = {
+//   isAirbag: false,
+// };
+
+//eski yoli
+// gm.__proto__ = car;
+// console.log(gm.color);
+// gm.isSpeed();
+
+// 1 - yoli
+// Object.setPrototypeOf(gm, car);
+// console.log(gm);
+
+// 2 - yoli
+
+// const bmw = Object.create(car);
+
+// console.log(bmw);
+
+/* ------------- 25 - Dars "Amaliyot, uyga vazifa. OOP"💰 ------------ */
+
+// const seriesDB = {
+//   count: 0,
+//   series: {},
+//   actors: {},
+//   genres: [],
+//   private: false,
+//   start: function () {
+//     seriesDB.count = +prompt("Nechta serial ko'rdingiz?", "");
+
+//     while (
+//       seriesDB.count == "" ||
+//       seriesDB.count == null ||
+//       isNaN(seriesDB.count)
+//     ) {
+//       seriesDB.count = +prompt("Nechta serial ko'rdingiz?", "");
+//     }
+//   },
+//   rememberMySeries: function () {
+//     for (let i = 0; i < 2; i++) {
+//       const a = prompt("Oxirgi ko'rgan serialingiz?"),
+//         b = prompt("Nechi baxo berasiz?");
+
+//       if (a != null && b != null && a != "" && b != "") {
+//         seriesDB.series[a] = b;
+//         console.log("done");
+//       } else {
+//         console.log("error");
+//         i--;
+//       }
+//     }
+//   },
+//   detectLevelSeries: function () {
+//     if (seriesDB.count < 5) {
+//       console.log("Kam serial ko’ripsiz");
+//     } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+//       console.log("Siz classik tamoshabin ekansiz");
+//     } else if (seriesDB.count >= 10) {
+//       console.log("Siz serialchi zvezda ekansiz");
+//     } else {
+//       console.log("Error");
+//     }
+//   },
+//   showDb: function () {
+//     if (!seriesDB.private) {
+//       console.log(seriesDB);
+//     }
+//   },
+//   visibleDB: function () {
+//     if (seriesDB.private) {
+//       seriesDB.private = false;
+//     } else {
+//       seriesDB.private = true;
+//     }
+//   },
+//   writeGenres: function () {
+//     // for (let i = 0; i < 3; i++) {
+//     // const genre = prompt(`Yaxshi ko'rgan janringiz ${i + 1}`, '')
+//     // if (genre === '' || genre === null) {
+//     //   console.log("Siz notog'ri ma'lumot kiritdingiz")
+//     //   i--
+//     // } else {
+//     //   seriesDB.genres[i] = genre
+//     // }
+//     // }
+
+//     let genres = prompt(
+//       "Yaxshi ko'rgan janringizni vergul yordamida yozing"
+//     ).toLowerCase();
+
+//     if (genres === "" || genres === null) {
+//       console.log("Siz notog'ri ma'lumot kiritdingiz");
+//       i--;
+//     } else {
+//       seriesDB.genres = genres.split(", ");
+//       seriesDB.genres.sort();
+//     }
+
+//     seriesDB.genres.forEach((item, idx) => {
+//       console.log(`Yaxshi ko’rgan janringiz ${idx + 1} - nomi ${item}`);
+//     });
+//   },
+// };
+
+/* ------------- 26 - Dars "Dynamic typing"💰 ------------ */
+
+// to string
+// 1
+// console.log(typeof String(4));
+
+// // 2
+// console.log("samar" + 15);
+
+// const youtubeChannel = 10;
+// console.log("youtube.com/channel/" + youtubeChannel);
+
+// to number
+// 1
+// console.log(typeof Number("4"));
+
+// // 2
+// console.log(typeof +"5");
+
+// // 3
+// console.log(typeof parseInt("15"));
+
+// to boolean
+
+// 0, "", null, undefined, NaN = xar doim false
+
+// 1
+
+// console.log(typeof Boolean("4"));
+
+// // 2
+
+// console.log(typeof !!"4");
+
+/* ------------- 27 - Dars "DOM bilan ishlash"💰 ------------ */
+
+// OLD way
+const box = document.getElementById("box");
+//console.log(box);
+
+const buttons = document.getElementsByTagName("button");
+//console.log(buttons);
+
+const circle = document.getElementsByClassName("circle");
+//console.log(circle);
+
+// NEW way
+const heart = document.querySelector(".heart");
+//console.log(heart);
+
+const hearts = document.querySelectorAll(".heart");
+//console.log(hearts);
+
+hearts.forEach((item) => {
+  console.log(item);
+});
