@@ -1,4 +1,7 @@
 "use strict";
+
+/* -------------------- 2 - MODUL💰 ---------------- */
+
 /* -------------------- 5 - Dars "O'zgaruvchilar"💰 ---------------- */
 
 // // popular version
@@ -815,22 +818,342 @@ OBJECT: Array; Object; Function; RegEx; Date: */
 /* ------------- 27 - Dars "DOM bilan ishlash"💰 ------------ */
 
 // OLD way
-const box = document.getElementById("box");
+//const box = document.getElementById("box");
 //console.log(box);
 
-const buttons = document.getElementsByTagName("button");
+//const buttons = document.getElementsByTagName("button");
 //console.log(buttons);
 
-const circle = document.getElementsByClassName("circle");
+//const circle = document.getElementsByClassName("circle");
 //console.log(circle);
 
 // NEW way
-const heart = document.querySelector(".heart");
+//const heart = document.querySelector(".heart");
 //console.log(heart);
 
-const hearts = document.querySelectorAll(".heart");
+//const hearts = document.querySelectorAll(".heart");
 //console.log(hearts);
 
-hearts.forEach((item) => {
-  console.log(item);
-});
+//hearts.forEach((item) => {
+//  console.log(item);
+//});
+
+/* ------------- 28 - Dars "Metodlar bilan ishlash"💰 ------------ */
+
+// const box = document.querySelector("#box");
+// const buttons = document.querySelectorAll("button");
+// const circles = document.querySelectorAll(".circle");
+// const circle = document.querySelector(".circle");
+// const hearts = document.querySelectorAll(".heart");
+// const circleWrapper = document.querySelector(".circle__wrapper");
+
+// box
+// box.style.backgroundColor = "red";
+// box.style.height = "200px";
+// box.style.width = "200px";
+
+// buttons
+//buttons[0].style.width = "100px";
+
+// circle
+// circles[1].style.backgroundColor = "yellow";
+// circle.style.background = "yellow";
+
+// heart
+// for old
+// for (let i = 0; i < hearts.length; i++) {
+//   hearts[i].style.backgroundColor = "green";
+// }
+
+// forEach new
+// hearts.forEach((item) => {
+//   item.style.backgroundColor = "gray";
+// });
+
+// New element create
+// const btn = document.createElement("button");
+// document.body.append(btn);
+
+// const myCircle = document.createElement("div");
+// myCircle.classList.add("circle");
+// circleWrapper.append(myCircle);
+// circleWrapper.before(myCircle);
+// circleWrapper.after(myCircle);
+// circles[0].before(myCircle);
+// circles[1].remove();
+// circles[1].replaceWith(myCircle);
+// circleWrapper.append(myCircle);
+// myCircle.innerHTML = "E";
+// myCircle.textContent = "E";
+// circleWrapper.insertAdjacentHTML("afterbegin", "<pre>E</pre>");
+
+/* ------------- 29 - Dars "Amaliyot, uyga vazifa. DOM"💰 ------------ */
+
+/* ------------- 30 - Dars "Xodisalar bilan ishlash"💰 ------------ */
+
+// const btn = document.querySelector("#btn");
+// const overlay = document.querySelector(".overlay");
+
+// click
+// btn.addEventListener("click", () => {
+//   alert("clcick");
+// });
+
+// btn.addEventListener("click", () => {
+//   alert("clcick2");
+// });
+
+// mouseenter
+// btn.addEventListener("mouseenter", (event) => {
+// console.log(event.target);
+// event.target.remove();
+// alert("never");
+// });
+
+// let i = 0;
+
+// const deleteElement = (evnt) => {
+//   evnt.target.remove();
+// };
+
+// btn.addEventListener("click", deleteElement);
+
+// const cb = (e) => {
+//   console.log(e.currentTarget);
+// };
+
+// btn.addEventListener("click", cb);
+// overlay.addEventListener("click", cb);
+
+// const link = document.querySelector("a");
+
+// link.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   alert("link");
+// });
+
+// const btns = document.querySelectorAll("button");
+
+// const logger = () => {
+//   console.log(1);
+// };
+
+// btns.forEach((item) => {
+//   item.addEventListener("click", logger, { once: true });
+// });
+
+/* ------------- 31 - Dars "Navigatsiya DOM bo'yicha"💰 ------------ */
+
+// console.log(document.head);
+// console.log(document.body);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
+// console.log(document.querySelector("#btn").parentNode.parentNode);
+// console.log(document.querySelector('[data-current="b"]').nextSibling);
+
+// for (let node of document.body.childNodes) {
+//   if (node.nodeName === "#text") {
+//     continue;
+//   }
+//   console.log(node);
+// }
+
+/* ------------- 33 - Dars "Async, defer. Dynamic scriptlar"💰 ------------ */
+
+// function loadScript(src) {
+//   const script = document.createElement("script");
+//   script.src = src;
+//   script.async = false;
+//   document.body.append(script);
+// }
+// loadScript("second.js");
+
+/* ------------- 34 - Dars "Developer tools. Xatolarni kuzatish"💰 ------------ */
+
+// function sayHello() {
+//   console.log("Good morning");
+// }
+// sayHello();
+
+//   console.log("Good bye");
+// }
+// sayBye();
+
+// const arr = [1, 34, 14, -56, 98],
+//   sorted = arr.sort(compareNum);
+
+// function compareNum(a, b) {
+//   return a - b;
+// }
+
+// console.log(sorted);
+
+/* -------------------- 3 - MODUL 💰 ---------------- */
+
+/* -------------------- 35  - Dars "Classlist"💰 ---------------- */
+
+// const btns = document.querySelectorAll("button");
+
+// console.log(btns[0].classList.length);
+// console.log(btns[0].classList.item(0));
+// btns[0].classList.remove("blue");
+// btns[1].classList.add("blue", "some");
+// btns[0].classList.toggle("blue");
+
+// btns[0].classList.add("red");
+
+// if (btns[0].classList.contains("red")) {
+//   console.log("yeap");
+// }
+
+// btns[0].addEventListener("click", () => {
+//   if (!btns[1].classList.contains("red")) {
+//     btns[1].classList.add("red");
+//   } else {
+//     btns[1].classList.remove("red");
+//   }
+// });
+
+// TOGGLE
+// btns[0].addEventListener("click", () => {
+//   btns[1].classList.toggle("red");
+// });
+
+/* -------------------- 36  - Dars "Delegatsiya"💰 ---------------- */
+
+// const wrapper = document.querySelector(".btn-block");
+// const btns = document.querySelectorAll("button");
+
+// btns[0].addEventListener("click", () => {
+//   btns[1].classList.toggle("red");
+// });
+
+// wrapper.addEventListener("click", (event) => {
+//   if (event.target && event.target.classList.contains("red")) {
+//     console.log("btn click");
+//   }
+// });
+
+// btns.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     console.log("clicked");
+//   });
+// });
+
+// const btn = document.createElement("button");
+// btn.classList.add("red");
+
+// wrapper.append(btn);
+
+/* -------------------- 38  - Dars "Animatsiya. setTimeOut & setInterval"💰 ---------------- */
+// const btn = document.querySelector("#btn");
+
+// let timerId;
+// let i = 0;
+// btn.addEventListener("click", () => {
+//   // timerId = setTimeout(logger, 1000);
+//   timerId = setInterval(logger, 500);
+// });
+
+// function logger() {
+//   if (i === 3) {
+//     clearInterval(timerId);
+//   }
+//   console.log("set time out");
+//   i++;
+// }
+
+// let id = setTimeout(function log() {
+//   console.log("Hello");
+//   id = setTimeout(log, 500);
+// }, 500);
+
+// function myAnimation() {
+//   const car = document.querySelector(".car");
+//   let pos = 0;
+
+//   const timerId = setInterval(frame, 10);
+
+//   function frame() {
+//     if (pos === 700) {
+//       clearInterval(timerId);
+//     } else {
+//       pos++;
+//       car.style.left = pos + "px";
+//     }
+//   }
+// }
+
+// btn.addEventListener("click", myAnimation);
+
+/* -------------------- 39  - Dars "Loyiha loader"💰 ---------------- */
+
+/* -------------------- 40  - Dars "Date bilan ishlash"💰 ---------------- */
+
+// const now = new Date();
+
+// console.log(now.getDay());
+
+// console.log(now.setHours(18));
+// console.log(now);
+
+// let start = new Date();
+
+// for (let i = 0; i < 100000; i++) {
+//   let some = i ** 3;
+// }
+
+// let end = new Date();
+
+// console.log(start.getTime());
+// console.log(end.getTime());
+
+// alert(` Loop competed in ${end - start} millisecond`);
+
+/* -------------------- 43  - Dars "Window, Doc bilan ishlash"💰 ---------------- */
+
+// const box = document.querySelector(".box");
+// const btn = document.querySelector("button");
+
+// const width = box.clientWidth;
+// const height = box.clientHeight;
+
+// const width = box.offsetWidth;
+// const height = box.offsetHeight;
+
+//const height = box.scrollHeight
+
+// btn.addEventListener("click", () => {
+// box.style.height = box.scrollHeight + "px";
+// console.log(box.scrollTop);
+// });
+
+/* -------------------- 43  - Dars "Optimize qilish"💰 ---------------- */
+
+/* -------------------- 44  - Dars "Function constructor"💰 ---------------- */
+
+function Car(name, color, mph) {
+  this.name = name;
+  this.mph = mph;
+  this.color = color;
+  this.isAirbag = true;
+  this.speed = function () {
+    console.log(`Speed of car ${this.name} is ${this.mph}`);
+  };
+}
+
+Car.prototype.sayHello = function () {
+  console.log(`Car name of ${this.name} say hello`);
+};
+
+const bmw = new Car("bmw", "red", 140);
+const merc = new Car("merc", "black", 200);
+console.log(bmw);
+console.log(merc);
+
+bmw.sayHello();
+merc.sayHello();
+
+console.log(bmw);
+console.log(merc);
