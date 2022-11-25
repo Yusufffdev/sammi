@@ -1133,27 +1133,113 @@ OBJECT: Array; Object; Function; RegEx; Date: */
 
 /* -------------------- 44  - Dars "Function constructor"💰 ---------------- */
 
-function Car(name, color, mph) {
-  this.name = name;
-  this.mph = mph;
-  this.color = color;
-  this.isAirbag = true;
-  this.speed = function () {
-    console.log(`Speed of car ${this.name} is ${this.mph}`);
-  };
-}
+// function Car(name, color, mph) {
+//   this.name = name;
+//   this.mph = mph;
+//   this.color = color;
+//   this.isAirbag = true;
+//   this.speed = function () {
+//     console.log(`Speed of car ${this.name} is ${this.mph}`);
+//   };
+// }
 
-Car.prototype.sayHello = function () {
-  console.log(`Car name of ${this.name} say hello`);
+// Car.prototype.sayHello = function () {
+//   console.log(`Car name of ${this.name} say hello`);
+// };
+
+// const bmw = new Car("bmw", "red", 140);
+// const merc = new Car("merc", "black", 200);
+// console.log(bmw);
+// console.log(merc);
+
+// bmw.sayHello();
+// merc.sayHello();
+
+// console.log(bmw);
+// console.log(merc);
+
+/* -------------------- 44  - Dars "Context this & Closure"💰 ---------------- */
+// 1 -  Oddiy function contextti ya'ni this xar doim window global objectga qaram boladi; agarda qattiy rejim yoqu bosa (use strict) context undefind ga teng boladi
+
+// context this = xar doim nmagadir qaram
+
+// function logger(a, b) {
+//   console.log(this);
+//   function sum() {
+//     console.log(this);
+//     return this.a + this.b;
+//   }
+//   console.log(sum());
+// }
+
+// logger(1, 2);
+
+// 2 - Context objectni ichidagi metotda objeckti oziga teng
+
+// const obj = {
+//   x: 10,
+//   y: 15,
+//   sum: function () {
+//     console.log(this);
+//
+//
+//   },
+// };
+
+// obj.sum();
+
+// 3 - Context this funksiya konstruktorda yangi objectni ekzamplyariga teng
+
+// function Car(name, color) {
+//   this.name = name;
+//   this.color - color;
+//   this.isAirbag = true;
+// }
+
+// const bmw = new Car("BMW", "Black");
+
+/* -------------------- 44  - Dars "Call, Apply & Bind"💰 ---------------- */
+
+// function logger(speed) {
+//   console.log(this);
+//   console.log(
+//     `My car is ${this.name} color is ${this.color}. Max speed ${speed}`
+//   );
+// }
+
+// const car = {
+//   name: "BMW",
+//   color: "Black",
+// };
+
+// // call, apply, bind
+
+// logger.call(car, 200);
+// logger.apply(car, [300]);
+
+// function calc(number) {
+//   return this * number;
+// }
+
+// const miltilpe2 = calc.bind(2);
+// console.log(miltilpe2(10));
+
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", (e) => {
+  e.target.style.width = "480px";
+});
+
+// strelkali funksiya xech qanday contextga ega emas u har doim ozini teoasidagi contextga qaram boladi
+const obj = {
+  x: 10,
+  y: 15,
+  sum: function () {
+    const logger = () => {
+      console.log(this);
+    };
+    logger();
+  },
 };
 
-const bmw = new Car("bmw", "red", 140);
-const merc = new Car("merc", "black", 200);
-console.log(bmw);
-console.log(merc);
-
-bmw.sayHello();
-merc.sayHello();
-
-console.log(bmw);
-console.log(merc);
+obj.sum();
